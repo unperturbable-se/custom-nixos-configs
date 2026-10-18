@@ -32,24 +32,13 @@ in
   services.xserver.desktopManager.xfce.enable = true;
   services.openssh.enable = true;
 
-  environment.systemPackages = with pinnedPkgs; [
-  vim git htop tmux
-  wget curl jq ripgrep fd tree unzip file rsync
-  btop fastfetch lsof pciutils usbutils
-  gcc gnumake gdb python3
-  firefox
-  vscode uv openssh
-  fzf bat eza zoxide
-  nmap tcpdump dig traceroute
-  strace ltrace valgrind
-  nodejs rustup go
-  docker-compose
-  p7zip zip
-  neovim
-];
+  environment.systemPackages = with pinnedPkgs; [ vim git htop tmux vscode  ];
 
-virtualisation.docker.enable = true;
-users.users.raed.extraGroups = [ "wheel" "networkmanager" "docker" ];
+  users.users.raed = {
+  isNormalUser = true;
+  extraGroups = [ "wheel" "networkmanager" "docker" ];
+  packages = with pinnedPkgs; [ curl jq ];
+};
 
   system.stateVersion = "24.05";
 }
