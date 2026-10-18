@@ -19,11 +19,12 @@ in
 
   boot.loader.grub = {
     enable = true;
-    device = "/dev/sda";
+    device = "/dev/vda";
   };
 
   networking.hostName = "reproducible-box";
   time.timeZone = "UTC";
+  i18n.defaultLocale = "en_US.UTF-8";
 
   environment.systemPackages = with pinnedPkgs; [ vim git htop tmux ];
 
