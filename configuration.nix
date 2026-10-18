@@ -5,7 +5,7 @@ let
 
   pinnedPkgs = import (fetchTarball {
     url = "https://github.com/NixOS/nixpkgs/archive/${nixpkgsCommit}.tar.gz";
-    sha256 = "854a570860e89c1d649aa9f395f9a699e6d99ecd9829a7a0c1a27e5157b243ba;
+    sha256 = "854a570860e89c1d649aa9f395f9a699e6d99ecd9829a7a0c1a27e5157b243ba";
   }) {
     config = { allowUnfree = true; };
   };
