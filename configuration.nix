@@ -23,14 +23,20 @@ in
   };
 
   networking.hostName = "reproducible-box";
+  networking.networkmanager.enable = true;
   time.timeZone = "UTC";
   i18n.defaultLocale = "en_US.UTF-8";
+
+  services.xserver.enable = true;
+  services.xserver.displayManager.lightdm.enable = true;
+  services.xserver.desktopManager.xfce.enable = true;
+  services.openssh.enable = true;
 
   environment.systemPackages = with pinnedPkgs; [ vim git htop tmux ];
 
   users.users.raed = {
     isNormalUser = true;
-    extraGroups = [ "wheel" ];
+    extraGroups = [ "wheel" "networkmanager" ];
     packages = with pinnedPkgs; [ curl jq ];
   };
 
