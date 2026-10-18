@@ -11,35 +11,26 @@ let
   };
 in
 {
-  imports = [
-    ./hardware-configuration.nix
-  ];
+  imports = [ ./hardware-configuration.nix ];
 
-  # Forces system evaluations to use the pinned release without needing -I
   nix.nixPath = [
     "nixpkgs=https://github.com/NixOS/nixpkgs/archive/${nixpkgsCommit}.tar.gz"
   ];
 
-  boot.loader.systemd-boot.enable = true;
-  boot.loader.efi.canTouchEfiVariables = true;
+  boot.loader.grub = {
+    enable = true;
+    device = "/dev/sda";
+  };
 
   networking.hostName = "reproducible-box";
   time.timeZone = "UTC";
 
-  environment.systemPackages = [
-    pinnedPkgs.vim
-    pinnedPkgs.git
-    pinnedPkgs.htop
-    pinnedPkgs.tmux
-  ];
+  environment.systemPackages = with pinnedPkgs; [ vim git htop tmux ];
 
   users.users.raed = {
     isNormalUser = true;
-    extraGroups = [ "wheel" "docker" ];
-    packages = [
-      pinnedPkgs.curl
-      pinnedPkgs.jq
-    ];
+    extraGroups = [ "wheel" ];
+    packages = with pinnedPkgs; [ curl jq ];
   };
 
   system.stateVersion = "24.05";
