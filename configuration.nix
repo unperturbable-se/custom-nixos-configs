@@ -27,12 +27,13 @@ in
   time.timeZone = "UTC";
   i18n.defaultLocale = "en_US.UTF-8";
 
-  services.xserver.enable = true;
-  services.xserver.displayManager.lightdm.enable = true;
-  services.xserver.desktopManager.xfce.enable = true;
+  programs.hyprland.enable = true;
+  services.displayManager.sddm.enable = true;
+  services.displayManager.sddm.wayland.enable = true;
+
   services.openssh.enable = true;
 
-  environment.systemPackages = with pinnedPkgs; [ vim git htop tmux vscode  ];
+  environment.systemPackages = with pinnedPkgs; [ vim git htop tmux vscode  kitty rofi-wayland waybar dunst hyprpaper];
 
   users.users.raed = {
   isNormalUser = true;
