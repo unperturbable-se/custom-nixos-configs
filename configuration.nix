@@ -1,11 +1,11 @@
 { config, pkgs, ... }:
 
 let
-  nixpkgsCommit = "b134951a4c9f3c995fd7be05f3243f8ecd65d798";
+  nixpkgsCommit = "ac588ef1c914";
 
   pinnedPkgs = import (fetchTarball {
     url = "https://github.com/NixOS/nixpkgs/archive/${nixpkgsCommit}.tar.gz";
-    sha256 = "0zydsqiaz8qi4zd63zsb2gij2p614cgkcaisnk11wjy3nmiq0x1s";
+    sha256 = "1sxd2sqlpy1bx6b5xiwy1pbyygazl9d1a5yy0rvqfsihqpcibq2y";
   }) {
     config = { allowUnfree = true; };
   };
