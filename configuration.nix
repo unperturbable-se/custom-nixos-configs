@@ -14,6 +14,7 @@ in
   imports = [ ./hardware-configuration.nix ];
 
   nix.nixPath = [
+    "nixos-config=/etc/nixos/configuration.nix"
     "nixpkgs=https://github.com/NixOS/nixpkgs/archive/${nixpkgsCommit}.tar.gz"
   ];
 
