@@ -19,9 +19,9 @@ in
   ];
 
   boot.loader.grub = {
-    enable = true;
-    device = "/dev/vda";
-  };
+  enable = true;
+  devices = [ "/dev/vda" ]; # Changed from 'device' to 'devices' list
+};
 
   networking.hostName = "reproducible-box";
   networking.networkmanager.enable = true;
