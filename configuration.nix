@@ -34,7 +34,7 @@ in
 
   services.openssh.enable = true;
 
-  environment.systemPackages = with pinnedPkgs; [ vim git htop tmux vscode firefox     kitty rofi-wayland waybar dunst hyprpaper];
+  environment.systemPackages = with pinnedPkgs; [ vim git htop tmux vscode firefox     kitty rofi waybar dunst hyprpaper];
 
   users.users.raed = {
   isNormalUser = true;
