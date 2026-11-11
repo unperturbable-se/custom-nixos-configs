@@ -21,6 +21,11 @@ in
   boot.loader.grub = {
   enable = true;
   devices = [ "/dev/vda" ]; # Changed from 'device' to 'devices' list
+
+  hardware.graphics = {
+    enable = true;
+    enable32Bit = true;
+  };
 };
 
   networking.hostName = "reproducible-box";
