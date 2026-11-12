@@ -34,7 +34,7 @@
   programs.hyprland.enable = true;
   programs.nix-ld.enable = true;
   services.displayManager.sddm.enable = true;
-  services.displayManager.sddm.wayland.enable = true;
+  services.displayManager.sddm.wayland.enable = false;
 
   services.openssh.enable = true;
 
@@ -50,6 +50,7 @@
     waybar
     dunst
     hyprpaper
+    kdePackages.kate
   ];
 
   users.users.raed = {

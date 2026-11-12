@@ -1,0 +1,271 @@
+--    __  _____  _____      __  _____          ___
+--   /  |/  / / / / / | /| / / / ___/__  ___  / _/
+--  / /|_/ / /_/_  _/ |/ |/ / / /__/ _ \/ _ \/ _/
+-- /_/  /_/____//_/ |__/|__/  \___/\___/_//_/_/
+--
+
+-- HOME directory
+local HOME = os.getenv("HOME")
+
+-- Add .local/bin to PATH
+local current_path = os.getenv("PATH")
+hl.env("PATH", HOME .. "/.local/bin:" .. current_path)
+
+-- Add .cargo/bin to PATH
+local current_path = os.getenv("PATH")
+hl.env("PATH", HOME .. "/.cargo/bin:" .. current_path)
+
+-- Pavucontrol
+hl.window_rule({
+    name = "pavucontrol",
+    match = {class = ".*org.pulseaudio.pavucontrol.*"},
+    float = true,
+    center = true,
+    size = "700 600"
+})
+
+-- ML4W Welcome App
+hl.window_rule({
+    name = "ml4w-welcome-app",
+    match = {title = "ML4W Welcome"},
+    float = true,
+    center = true,
+    pin = true,
+    size = "700 640"
+})
+
+-- ML4W Dock Settings (Quickshell dock dialog)
+hl.window_rule({
+    name = "ml4w-dock-settings",
+    match = {title = "ML4W Dock Settings"},
+    float = true,
+    center = true,
+    pin = true,
+    size = "480 300"
+})
+
+-- ML4W Settings App
+hl.window_rule({
+    name = "ml4w-settings-app",
+    match = {title = "ML4W Dotfiles Settings"},
+    float = true,
+    center = true,
+    pin = true,
+    size = "900 600"
+})
+
+-- Newelle
+hl.window_rule({
+    name = "newelle",
+    match = {class = "io.github.qwersyk.Newelle"},
+    float = true,
+    center = true,
+    pin = true,
+    size = "1000 700"
+})
+
+-- Blueman Manager
+hl.window_rule({
+    name = "blueman-manager",
+    match = {class = "blueman-manager"},
+    float = true,
+    center = true,
+    size = "800 600"
+})
+
+-- nwg-look
+hl.window_rule({
+    name = "nwg-look",
+    match = {class = "nwg-look"},
+    float = true,
+    center = true,
+    size = "700 600"
+})
+
+-- nwg-displays
+hl.window_rule({
+    name = "nwg-displays",
+    match = {class = "nwg-displays"},
+    float = true,
+    center = true,
+    size = "900 600"
+})
+
+-- System Mission Center
+hl.window_rule({
+    name = "missioncenter",
+    match = {class = "io.missioncenter.MissionCenter"},
+    float = true,
+    center = true,
+    pin = true,
+    size = "900 600"
+})
+
+-- Gnome Calculator
+hl.window_rule({
+    name = "gnome-calculator",
+    match = {class = "org.gnome.Calculator"},
+    float = true,
+    center = true,
+    size = "700 600"
+})
+
+-- Hyprland Share Picker
+hl.window_rule({
+    name = "hyprland-share-picker",
+    match = {class = "hyprland-share-picker"},
+    float = true,
+    pin = true,
+    center = true,
+    size = "600 400"
+})
+
+-- GTK File and Folder Picker
+hl.window_rule({
+    name = "xdg-desktop-portal-gtk",
+    match = {class = "xdg-desktop-portal-gtk"},
+    float = true,
+    center = false,
+    size = "800 600"
+})
+
+-- nm-connection-editor
+hl.window_rule({
+    name = "nm-connection-editor",
+    match = {class = "nm-connection-editor"},
+    float = true,
+    center = true,
+    size = "800 700"
+})
+
+-- Hyprmod
+hl.window_rule({
+    name = "io.github.bluemancz.hyprmod",
+    match = {class = "io.github.bluemancz.hyprmod"},
+    float = true,
+    center = true,
+    size = "1000 700"
+})
+
+-- ML4W Floating
+hl.window_rule({
+    name = "dotfiles-floating",
+    match = {class = "dotfiles-floating"},
+    float = true,
+    center = true,
+    size = "1000 700"
+})
+
+-- Window Mode (tiling|floating), set from the sidebar via ml4w-window-mode.
+-- Stored in ~/.config/ml4w/settings/window-mode (missing = tiling). The rule
+-- floats every new window and is switched at runtime with
+-- `hyprctl eval "set_window_mode('floating')"`, so no reload is needed.
+window_mode_rule = hl.window_rule({
+    name = "ml4w-window-mode-floating",
+    match = {class = ".*"},
+    float = true
+})
+
+function set_window_mode(mode)
+    window_mode_rule:set_enabled(mode == "floating")
+end
+
+local window_mode_file = io.open(HOME .. "/.config/ml4w/settings/window-mode", "r")
+local window_mode = window_mode_file and window_mode_file:read("*l") or "tiling"
+if window_mode_file then window_mode_file:close() end
+set_window_mode(window_mode)
+
+-- Picture-in-Picture
+hl.window_rule({
+    name = "Picture-in-Picture",
+    match = {
+        title = [[^([Pp]icture[-\s]?[Ii]n[-\s]?[Pp]icture)(.*)$]]
+    },
+    float = true,
+    pin = true,
+    focus_on_activate = false,
+    no_initial_focus = true,
+    suppress_event = "activate"
+})
+
+-- XWayland Video Bridge
+hl.window_rule({
+    name = "xwaylandvideobridge",
+    match = { class = "^(xwaylandvideobridge)$" },
+    opacity = "0.0 override 0.0 override",
+    no_anim = true,
+    no_initial_focus = true,
+    max_size = "1 1",
+    no_blur = true,
+    float = true
+})
+
+-- ML4W Power Menu (slides in on its own)
+hl.layer_rule({ match = { namespace = "ml4w-powermenu" }, no_anim = true })
+
+-- Quickshell Blur (on|off), set from the sidebar via ml4w-quickshell-blur.
+-- Stored in ~/.config/ml4w/settings/quickshell-blur (missing = on). Blurs
+-- what is behind the status bar, sidebar, wallpaper selector, dock (layer
+-- namespace "quickshell") and power menu. ignore_alpha keeps the fully
+-- transparent parts of the surfaces (e.g. the full-width strip around the
+-- status bar) unblurred. The strength follows decoration.blur. Switched at
+-- runtime with `hyprctl eval "set_quickshell_blur('on')"`, so no reload is
+-- needed.
+quickshell_blur_rule = hl.layer_rule({
+    name = "ml4w-quickshell-blur",
+    match = { namespace = "^(quickshell|ml4w-powermenu)$" },
+    blur = true,
+    ignore_alpha = 0.1
+})
+
+function set_quickshell_blur(state)
+    quickshell_blur_rule:set_enabled(state ~= "off")
+end
+
+local quickshell_blur_file = io.open(HOME .. "/.config/ml4w/settings/quickshell-blur", "r")
+local quickshell_blur = quickshell_blur_file and quickshell_blur_file:read("*l") or "on"
+if quickshell_blur_file then quickshell_blur_file:close() end
+set_quickshell_blur(quickshell_blur)
+
+-- Wayland variables
+hl.env("OZONE_PLATFORM", "wayland")
+hl.env("ELECTRON_OZONE_PLATFORM_HINT", "wayland")
+hl.env("DESKTOP_SESSION", "Hyprland")
+hl.env("XDG_SESSION_TYPE", "wayland")
+
+-- Qt related environment variables
+hl.env("QT_QPA_PLATFORM", "wayland;xcb")
+hl.env("QT_QPA_PLATFORMTHEME", "qt6ct")
+hl.env("QT_WAYLAND_DISABLE_WINDOWDECORATION", "1")
+
+hl.env("XDG_CURRENT_DESKTOP", "Hyprland")
+hl.env("XDG_SESSION_TYPE", "wayland")
+hl.env("XDG_SESSION_DESKTOP", "Hyprland")
+
+-- GDK
+hl.env("GDK_SCALE", "1")
+
+-- Toolkit Backend
+hl.env("GDK_BACKEND", "wayland,x11,*")
+hl.env("CLUTTER_BACKEND", "wayland")
+
+-- Mozilla
+hl.env("MOZ_ENABLE_WAYLAND", "1")
+
+-- Set the cursor size for xcursor
+hl.env("XCURSOR_THEME", "Bibata-Modern-Ice")
+hl.env("XCURSOR_SIZE", "24")
+hl.env("HYPRCURSOR_SIZE", "24")
+
+-- SDL version
+hl.env("SDL_VIDEODRIVER", "wayland")
+
+-- Quickshell debug
+hl.env("QS_NO_RELOAD_POPUP", "1")
+
+-- Force zero scaling for XWayland
+hl.config({
+  xwayland = {
+    force_zero_scaling = true
+  }
+})
