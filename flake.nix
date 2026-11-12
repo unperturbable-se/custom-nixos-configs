@@ -5,7 +5,7 @@
     nixpkgs.url = "github:NixOS/nixpkgs/ac588ef1c914"; # Your pinned commit
 
     home-manager = {
-      url = "github:nix-community/home-manager";
+      url = "github:nix-community/home-manager/release-26.05"; # Match your nixpkgs version
       inputs.nixpkgs.follows = "nixpkgs";
     };
   };
