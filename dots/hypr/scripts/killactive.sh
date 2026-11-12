@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/usr/bin/env bash
 
 # If a Quickshell overlay panel is open, close it instead of killing the
 # window behind it (SUPER+Q should not reach the background window).
