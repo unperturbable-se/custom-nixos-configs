@@ -1,7 +1,7 @@
 { config, pkgs, lib, ... }:
 
 let
-  dotsPath = "/etc/nixos/dots";
+  dotsPath = ./dots;
 in
 {
   home.username = "raed";

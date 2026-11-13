@@ -15,7 +15,7 @@
 
   networking.hostName = "reproducible-box";
   networking.networkmanager.enable = true;
-  time.timeZone = "Asia/Karachi"; # Changed from UTC; revert if UTC was intentional
+  time.timeZone = "Asia/Karachi";
 
   i18n.defaultLocale = "en_US.UTF-8";
   i18n.extraLocaleSettings = {
@@ -30,12 +30,19 @@
     LC_TIME = "ur_PK";
   };
 
-  # Display Manager & Hyprland
-  services.xserver.enable = true;
-  services.displayManager.sddm.enable = true;
-  services.displayManager.sddm.wayland.enable = true; # Better Wayland session support
+  # Display Manager (ReGreet + Greetd) & Hyprland
+  programs.regreet = {
+    enable = true;
+    settings = {
+      GTK = {
+        application_prefer_dark_theme = true;
+      };
+    };
+  };
+
   programs.hyprland = {
     enable = true;
+    withUWSM = true;
     xwayland.enable = true;
   };
 
@@ -85,7 +92,7 @@
     # Hyprland & Dotfile Ecosystem
     waybar
     rofi
-    swaynotificationcenter # Replaces dunst to match your swaync config
+    swaynotificationcenter
     hyprpaper
     wlogout
     matugen
@@ -94,6 +101,10 @@
     slurp
     networkmanagerapplet
     pavucontrol
+    swww
+    quickshell
+    libnotify
+    hyprpolkitagent
   ];
 
   users.users.raed = {
