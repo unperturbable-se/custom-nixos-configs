@@ -103,6 +103,13 @@
     firefox
     kitty
     kdePackages.kate
+    vlc
+  imv
+  kdePackages.dolphin
+  # helps Dolphin work properly outside KDE Plasma
+  kdePackages.kio-extras
+  kdePackages.kdegraphics-thumbnailers
+  kdePackages.breeze-icons
 
     # Hyprland & Dotfile Ecosystem
     waybar
