@@ -1,7 +1,114 @@
 configuration {
-  modi: "drun,run";
-  show-icons: true;
+  modi:                "drun,run";
+  show-icons:          true;
+  icon-theme:          "Papirus-Dark";
   drun-display-format: "{name}";
+  terminal:            "kitty";
+  font:                "JetBrainsMono Nerd Font 11";
+  display-drun:        "Apps";
+  display-run:         "Run";
+  matching:            "fuzzy";
+  sidebar-mode:        true;
+  hide-scrollbar:      true;
 }
 
 @theme "Arc-Dark"
+
+* {
+  bg:         #1e1e2ed9;
+  bg-alt:     #313244b3;
+  fg:         #cdd6f4;
+  fg-muted:   #a6adc8;
+  accent:     #cba6f7;
+  border-col: #b4befe;
+
+  background-color: transparent;
+  text-color:       @fg;
+  margin:           0px;
+  padding:          0px;
+  spacing:          0px;
+}
+
+window {
+  width:            560px;
+  background-color: @bg;
+  border:           2px;
+  border-color:     @border-col;
+  border-radius:    12px;
+  padding:          16px;
+}
+
+mainbox {
+  children: [ inputbar, listview, mode-switcher ];
+  spacing:  12px;
+}
+
+inputbar {
+  background-color: @bg-alt;
+  border-radius:    8px;
+  padding:          10px 14px;
+  spacing:          10px;
+  children:         [ prompt, entry ];
+}
+
+prompt {
+  text-color: @accent;
+  font:       "JetBrainsMono Nerd Font Bold 11";
+}
+
+entry {
+  placeholder:       "Search...";
+  placeholder-color: @fg-muted;
+}
+
+listview {
+  lines:        8;
+  columns:      1;
+  fixed-height: false;
+  scrollbar:    false;
+  spacing:      4px;
+}
+
+element {
+  padding:       8px 12px;
+  border-radius: 8px;
+  spacing:       12px;
+  orientation:   horizontal;
+}
+
+element normal.normal,
+element alternate.normal {
+  background-color: transparent;
+  text-color:       @fg;
+}
+
+element selected.normal {
+  background-color: @bg-alt;
+  text-color:       @accent;
+}
+
+element-icon {
+  size: 24px;
+}
+
+element-text {
+  vertical-align: 0.5;
+  text-color:     inherit;
+}
+
+mode-switcher {
+  spacing: 8px;
+}
+
+button {
+  padding:          8px;
+  background-color: @bg-alt;
+  border-radius:    8px;
+  text-color:       @fg-muted;
+}
+
+button selected {
+  background-color: @accent;
+  text-color:       #11111b;
+  font:             "JetBrainsMono Nerd Font Bold 11";
+}

@@ -5,19 +5,43 @@
   "modules-left": ["hyprland/workspaces"],
   "modules-center": ["clock"],
   "modules-right": ["pulseaudio", "network", "battery", "tray"],
-  "clock": {
-    "format": "{:%H:%M  %Y-%m-%d}"
+
+  "hyprland/workspaces": {
+    "format": "{name}",
+    "on-click": "activate"
   },
+
+  "clock": {
+    "format": "{:%H:%M  %Y-%m-%d}",
+    "tooltip-format": "<tt><small>{calendar}</small></tt>"
+  },
+
   "pulseaudio": {
     "format": "VOL {volume}%",
     "format-muted": "MUTED",
-    "on-click": "pavucontrol"
+    "scroll-step": 5,
+    "on-click": "pavucontrol",
+    "on-click-right": "wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle"
   },
+
   "network": {
     "format-wifi": "{essid} ({signalStrength}%)",
-    "format-disconnected": "Offline"
+    "format-ethernet": "ETH {ifname}",
+    "format-disconnected": "Offline",
+    "tooltip-format": "{ifname}: {ipaddr}/{cidr}"
   },
+
   "battery": {
-    "format": "BAT {capacity}%"
+    "states": {
+      "warning": 30,
+      "critical": 15
+    },
+    "format": "BAT {capacity}%",
+    "format-charging": "CHG {capacity}%",
+    "format-plugged": "AC {capacity}%"
+  },
+
+  "tray": {
+    "spacing": 8
   }
 }

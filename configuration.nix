@@ -30,6 +30,14 @@
     LC_TIME = "ur_PK";
   };
 
+  # Fonts (Registered properly via fontconfig for ReGreet, Waybar, & Urdu support)
+  fonts.packages = with pkgs; [
+    noto-fonts
+    noto-fonts-cjk-sans
+    noto-fonts-color-emoji
+    nerd-fonts.jetbrains-mono
+  ];
+
   # Display Manager (ReGreet + Greetd) & Hyprland
   programs.regreet = {
     enable = true;
@@ -51,7 +59,11 @@
     enable = true;
     extraPortals = [ pkgs.xdg-desktop-portal-gtk ];
   };
-  environment.sessionVariables.NIXOS_OZONE_WL = "1";
+
+  environment.sessionVariables = {
+    NIXOS_OZONE_WL = "1";
+    QT_QPA_PLATFORM = "wayland;xcb";
+  };
 
   # Audio (Required for Waybar audio controls)
   security.rtkit.enable = true;
@@ -60,16 +72,14 @@
     alsa.enable = true;
     alsa.support32Bit = true;
     pulse.enable = true;
+    wireplumber.enable = true;
   };
 
-  # Enable Docker since "docker" is in your user's extraGroups
+  # Enable Docker since user is in the "docker" group
   virtualisation.docker.enable = true;
 
   programs.nix-ld.enable = true;
   services.openssh.enable = true;
-
-  # Enable Fish if you use your fish dotfiles
-  programs.fish.enable = true;
 
   environment.systemPackages = with pkgs; [
     # Core CLI & Dev
@@ -82,6 +92,11 @@
     curl
     jq
     oh-my-posh
+
+    # Audio & Wayland Qt Support
+    wireplumber
+    qt5.qtwayland
+    qt6.qtwayland
 
     # Apps
     vscodium
