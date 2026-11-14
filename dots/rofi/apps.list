@@ -1,6 +1,7 @@
 # --- generated below (do not edit) ---
 Advanced Network Configuration|nm-connection-editor|no|preferences-system-network
 btop++|btop|yes|btop
+Dolphin|dolphin|no|org.kde.dolphin
 Firefox|firefox --name firefox|no|firefox
 GVim|gvim -f|no|gvim
 Htop|htop|yes|htop
@@ -12,5 +13,6 @@ Rofi|rofi -show|no|rofi
 Rofi Theme Selector|rofi-theme-selector|no|rofi
 uuctl|uuctl|no|applications-system
 Vim|vim|yes|gvim
+VLC media player|/nix/store/qn90zgzkcxj65ipcsnhbb7xhfjvbcqrn-vlc-3.0.24/bin/vlc --started-from-file|no|vlc
 Volume Control|pavucontrol|no|org.pulseaudio.pavucontrol
 VSCodium|codium|no|vscodium
