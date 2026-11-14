@@ -1,0 +1,15 @@
+[Default Applications]
+inode/directory=org.kde.dolphin.desktop
+video/mp4=vlc.desktop
+image/png=imv.desktop
+
+text/plain=org.kde.kate.desktop
+text/markdown=org.kde.kate.desktop
+text/x-shellscript=org.kde.kate.desktop
+text/x-python=org.kde.kate.desktop
+text/x-csrc=org.kde.kate.desktop
+application/json=org.kde.kate.desktop
+application/xml=org.kde.kate.desktop
+application/x-yaml=org.kde.kate.desktop
+application/x-nix=org.kde.kate.desktop
+
