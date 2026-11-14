@@ -116,7 +116,7 @@
     slurp
     networkmanagerapplet
     pavucontrol
-    swww
+    awww
     quickshell
     libnotify
     hyprpolkitagent
