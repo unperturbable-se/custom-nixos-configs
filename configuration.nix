@@ -75,9 +75,6 @@
     wireplumber.enable = true;
   };
 
-  # Enable Docker since user is in the "docker" group
-  virtualisation.docker.enable = true;
-
   programs.nix-ld.enable = true;
   services.openssh.enable = true;
 
@@ -100,16 +97,18 @@
 
     # Apps
     vscodium
+    zed-editor
+    google-chrome
+    keepassxc
     firefox
     kitty
     kdePackages.kate
     vlc
-  imv
-  kdePackages.dolphin
-  # helps Dolphin work properly outside KDE Plasma
-  kdePackages.kio-extras
-  kdePackages.kdegraphics-thumbnailers
-  kdePackages.breeze-icons
+    imv
+    kdePackages.dolphin
+    kdePackages.kio-extras
+    kdePackages.kdegraphics-thumbnailers
+    kdePackages.breeze-icons
 
     # Hyprland & Dotfile Ecosystem
     waybar
