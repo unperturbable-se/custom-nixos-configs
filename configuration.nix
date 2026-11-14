@@ -126,6 +126,7 @@
     quickshell
     libnotify
     hyprpolkitagent
+    papirus-icon-theme
   ];
 
   users.users.raed = {
