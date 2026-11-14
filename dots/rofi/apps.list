@@ -1,0 +1,16 @@
+# --- generated below (do not edit) ---
+Advanced Network Configuration|nm-connection-editor|no|preferences-system-network
+btop++|btop|yes|btop
+Firefox|firefox --name firefox|no|firefox
+GVim|gvim -f|no|gvim
+Htop|htop|yes|htop
+Kate|kate -b|no|kate
+kitty|kitty|no|kitty
+KWrite|kwrite|no|kwrite
+NixOS Manual|nixos-help|no|nix-snowflake
+Rofi|rofi -show|no|rofi
+Rofi Theme Selector|rofi-theme-selector|no|rofi
+uuctl|uuctl|no|applications-system
+Vim|vim|yes|gvim
+Volume Control|pavucontrol|no|org.pulseaudio.pavucontrol
+VSCodium|codium|no|vscodium
