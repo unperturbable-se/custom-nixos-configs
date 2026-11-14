@@ -8,7 +8,7 @@
 |---|---|
 | Super + Return | Terminal (kitty) |
 | Super + T | Terminal (kitty) |
-| Super + Space | App launcher (rofi) |
+| Super | App launcher (rofi) |
 | Super + E | File manager (Dolphin) |
 
 ## Windows
