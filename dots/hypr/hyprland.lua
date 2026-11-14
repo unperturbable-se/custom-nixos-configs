@@ -31,8 +31,8 @@ hl.config({
     gaps_out = 10,
     border_size = 2,
     col = {
-      active_border = "rgba(33ccffee) rgba(00ff99ee) 45deg",
-      inactive_border = "rgba(595959aa)",
+      active_border = "#33ccffee #00ff99ee 45deg",
+      inactive_border = "#595959aa",
     },
     layout = "dwindle",
   },
@@ -61,24 +61,24 @@ hl.config({
 })
 
 -- Layer rules (frosted glass blur for Waybar, Rofi, and SwayNC)
-hl.layer_rule("blur", "waybar")
-hl.layer_rule("ignorezero", "waybar")
+hl.layer_rule({ rule = "blur", namespace = "waybar" })
+hl.layer_rule({ rule = "ignorezero", namespace = "waybar" })
 
-hl.layer_rule("blur", "rofi")
-hl.layer_rule("ignorezero", "rofi")
+hl.layer_rule({ rule = "blur", namespace = "rofi" })
+hl.layer_rule({ rule = "ignorezero", namespace = "rofi" })
 
-hl.layer_rule("blur", "swaync-control-center")
-hl.layer_rule("ignorezero", "swaync-control-center")
-hl.layer_rule("blur", "swaync-notification-window")
-hl.layer_rule("ignorezero", "swaync-notification-window")
+hl.layer_rule({ rule = "blur", namespace = "swaync-control-center" })
+hl.layer_rule({ rule = "ignorezero", namespace = "swaync-control-center" })
+hl.layer_rule({ rule = "blur", namespace = "swaync-notification-window" })
+hl.layer_rule({ rule = "ignorezero", namespace = "swaync-notification-window" })
 
--- Core keybinds (using proper XKB keysyms and valid Hyprland dispatcher args)
+-- Core keybinds
 hl.bind(mainMod .. " + Return", hl.dsp.exec_cmd(terminal))
 hl.bind(mainMod .. " + Q", hl.dsp.window.kill())
 hl.bind(mainMod .. " + M", hl.dsp.exit())
 hl.bind(mainMod .. " + SPACE", hl.dsp.exec_cmd(menu))
-hl.bind(mainMod .. " + F", hl.dsp.window.fullscreen(0)) -- 0 = fullscreen, 1 = maximize (toggles automatically)
-hl.bind(mainMod .. " + V", hl.dsp.window.float())        -- toggles floating automatically
+hl.bind(mainMod .. " + F", hl.dsp.window.fullscreen({ mode = "fullscreen", action = "toggle" }))
+hl.bind(mainMod .. " + V", hl.dsp.window.float({ action = "toggle" }))
 
 -- Focus movement
 hl.bind(mainMod .. " + Left", hl.dsp.focus({ direction = "left" }))
