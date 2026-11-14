@@ -3,9 +3,11 @@ Advanced Network Configuration|nm-connection-editor|no|preferences-system-networ
 btop++|btop|yes|btop
 Dolphin|dolphin|no|org.kde.dolphin
 Firefox|firefox --name firefox|no|firefox
+Google Chrome|/nix/store/mym390ygai8dhynqiw9nh060xzj0nbfh-google-chrome-157.0.8103.38/bin/google-chrome-stable|no|google-chrome
 GVim|gvim -f|no|gvim
 Htop|htop|yes|htop
 Kate|kate -b|no|kate
+KeePassXC|keepassxc|no|keepassxc
 kitty|kitty|no|kitty
 KWrite|kwrite|no|kwrite
 NixOS Manual|nixos-help|no|nix-snowflake
@@ -16,3 +18,4 @@ Vim|vim|yes|gvim
 VLC media player|/nix/store/qn90zgzkcxj65ipcsnhbb7xhfjvbcqrn-vlc-3.0.24/bin/vlc --started-from-file|no|vlc
 Volume Control|pavucontrol|no|org.pulseaudio.pavucontrol
 VSCodium|codium|no|vscodium
+Zed|zeditor|no|zed

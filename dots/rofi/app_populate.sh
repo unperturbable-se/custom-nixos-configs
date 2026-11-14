@@ -45,3 +45,5 @@ done | sort -t'|' -k1,1 -f -u >> "$tmp"
 
 mv "$tmp" "$LIST"
 echo "Wrote $(grep -c '|' "$LIST") entries to $LIST"
+
+cp "$LIST" .
