@@ -128,6 +128,7 @@
     hyprpolkitagent
     papirus-icon-theme
     hyprlock
+    hyprlandPlugins.hyprbars
   ];
 
   users.users.raed = {
