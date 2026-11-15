@@ -1,1 +1,1 @@
-awww img ~/.config/awww/wallpapers/wall.png
+awww img ~/.config/awww/wallpaper.gif
