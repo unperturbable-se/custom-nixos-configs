@@ -1,5 +1,6 @@
 # Your own entries. Format: Name|Command|Terminal(yes/no)|Icon
 # Terminal and Icon are optional. This file is never overwritten.
 # After editing, run: ./populate-apps.sh --merge
+Power options | ~/.config/power-menu/power-menu.sh menu|no|system-shutdown
 Screenshots & Screen Recordings|~/.config/screenshot/screenshot.sh menu|no|applets-screenshooter
 View All Shortcuts|~/.config/shortcuts/shortcuts.sh|no|preferences-desktop-keyboard-shortcuts
