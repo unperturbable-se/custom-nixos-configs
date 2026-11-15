@@ -5,6 +5,7 @@
 ## System 
 | Shortcut | Action |
 |---|---|
+|CTRL +Alt +Delete | Power Menu
 | Windows + Shift+ L | Logout and close everything |
 | Windows + L | Lock screen |
 ## Apps
