@@ -121,6 +121,8 @@
     imv
     libreoffice
     joplin-desktop
+    yazi
+    dragon-drop #for dragndrop in yazi
     kdePackages.dolphin
     kdePackages.kio-extras
     kdePackages.kdegraphics-thumbnailers

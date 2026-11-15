@@ -1,0 +1,39 @@
+[[mgr.prepend_keymap]]
+on   = "<Space>"
+run  = [ "toggle", "arrow 1" ]
+desc = "Toggle selection and move down"
+
+[[mgr.prepend_keymap]]
+on   = "<C-a>"
+run  = "toggle_all --state=on"
+desc = "Select all"
+
+[[mgr.prepend_keymap]]
+on   = "<Esc>"
+run  = "escape"
+desc = "Clear selection"
+
+[[mgr.prepend_keymap]]
+on   = "<C-c>"
+run  = "yank"
+desc = "Copy"
+
+[[mgr.prepend_keymap]]
+on   = "<C-x>"
+run  = "yank --cut"
+desc = "Cut"
+
+[[mgr.prepend_keymap]]
+on   = "<C-v>"
+run  = "paste"
+desc = "Paste"
+
+[[mgr.prepend_keymap]]
+on   = "<Delete>"
+run  = "remove"
+desc = "Move to trash"
+
+[[mgr.prepend_keymap]]
+on   = "<C-d>"
+run  = 'shell -- dragon-drop -a -x "$@"'
+desc = "Drag and drop selected files"

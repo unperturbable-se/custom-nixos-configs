@@ -1,0 +1,15 @@
+[mgr]
+show_hidden    = false
+sort_by        = "natural"
+sort_dir_first = true
+mouse_events   = [ "click", "scroll", "touch", "move", "drag" ]
+
+[opener]
+xdg = [
+  { run = 'xdg-open "$@"', desc = "Open with system default", orphan = true, for = "linux" },
+]
+
+[open]
+rules = [
+  { url = "*", use = "xdg" },
+]
