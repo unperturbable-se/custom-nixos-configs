@@ -1,0 +1,77 @@
+/* Glassy GTK theme (Catppuccin Mocha tones)
+   GTK4 apps read ~/.config/gtk-4.0/gtk.css, GTK3 apps read ~/.config/gtk-3.0/gtk.css.
+   NOTE: this applies to EVERY app of that GTK version, not only iwgtk. */
+
+window,
+window.background {
+  background-color: rgba(30, 30, 46, 0.55);
+  color: #cdd6f4;
+  border-radius: 12px;
+}
+
+/* title bar blends into the glass */
+headerbar,
+.titlebar {
+  background: transparent;
+  box-shadow: none;
+  border: none;
+  color: #cdd6f4;
+}
+
+/* containers must be see-through or they paint over the glass */
+scrolledwindow,
+viewport,
+list,
+listview,
+stack,
+notebook,
+notebook > stack {
+  background-color: transparent;
+}
+
+row {
+  background-color: transparent;
+  border-radius: 10px;
+}
+
+row:hover {
+  background-color: rgba(203, 166, 247, 0.15);
+}
+
+row:selected {
+  background-color: rgba(203, 166, 247, 0.30);
+  color: #cdd6f4;
+}
+
+button {
+  background-image: none;
+  background-color: rgba(49, 50, 68, 0.60);
+  color: #cdd6f4;
+  border: none;
+  border-radius: 10px;
+  box-shadow: none;
+}
+
+button:hover {
+  background-color: rgba(203, 166, 247, 0.30);
+}
+
+entry,
+text {
+  background-color: rgba(49, 50, 68, 0.60);
+  color: #cdd6f4;
+  border-radius: 10px;
+}
+
+switch {
+  background-color: rgba(49, 50, 68, 0.80);
+  border: none;
+}
+
+switch:checked {
+  background-color: rgba(203, 166, 247, 0.80);
+}
+
+separator {
+  background-color: rgba(205, 214, 244, 0.10);
+}

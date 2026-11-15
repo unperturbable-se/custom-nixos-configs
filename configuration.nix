@@ -14,7 +14,11 @@
   };
 
   networking.hostName = "reproducible-box";
-  networking.networkmanager.enable = true;
+  networking.networkmanager = {
+  enable = true;
+  wifi.backend = "iwd";
+  };
+  networking.wireless.enable = false;
   time.timeZone = "Asia/Karachi";
 
   i18n.defaultLocale = "en_US.UTF-8";
@@ -76,6 +80,10 @@
   };
 
   programs.nix-ld.enable = true;
+  programs.nm-applet = {
+  enable = true;
+  indicator = true;
+  };
   services.openssh.enable = true;
 
   environment.systemPackages = with pkgs; [
@@ -129,6 +137,9 @@
     papirus-icon-theme
     hyprlock
     hyprlandPlugins.hyprbars
+    libdbusmenu-gtk3
+    libappindicator-gtk3
+    iwgtk
   ];
 
   users.users.raed = {
