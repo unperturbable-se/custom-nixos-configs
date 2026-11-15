@@ -53,7 +53,7 @@
     withUWSM = true;
     xwayland.enable = true;
   };
-
+  programs.hyprlock.enable=true;
   # Required for screen sharing, GTK theming, and Electron apps
   xdg.portal = {
     enable = true;
@@ -127,6 +127,7 @@
     libnotify
     hyprpolkitagent
     papirus-icon-theme
+    hyprlock
   ];
 
   users.users.raed = {

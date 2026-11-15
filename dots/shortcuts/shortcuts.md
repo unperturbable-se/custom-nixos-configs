@@ -1,56 +1,61 @@
+
 # Hyprland Shortcuts
 
-`Super` is the Windows key.
-
+`Windows` and `Super` are the same thing
+## System 
+| Shortcut | Action |
+|---|---|
+| Windows + Shift+ L | Logout and close everything |
+| Windows + L | Lock screen |
 ## Apps
 
 | Shortcut | Action |
 |---|---|
-| Super + Return | Terminal (kitty) |
-| Super + T | Terminal (kitty) |
-| Super | App launcher (rofi) |
-| Super + E | File manager (Dolphin) |
+| Windows + Return | Terminal (kitty) |
+| Windows + T | Terminal (kitty) |
+| Windows | App launcher (rofi) |
+| Windows + E | File manager (Dolphin) |
 
 ## Windows
 
 | Shortcut | Action |
 |---|---|
-| Super + Q | Close window |
-| Super + V | Toggle floating |
-| Super + F | Fullscreen |
-| Super + Shift + F | Maximize (keeps bar visible) |
-| Super + Arrow keys | Move focus |
+| Windows + Q | Close window |
+| Windows + V | Toggle floating |
+| Windows + F | Fullscreen |
+| Windows + Shift + F | Maximize (keeps bar visible) |
+| Windows + Arrow keys | Move focus |
 | Alt + Tab | Cycle through windows |
-| Super + Shift + Arrow keys | Move window |
-| Super + Ctrl + Arrow keys | Resize window (hold to repeat) |
-| Super + left-click drag | Move window with mouse |
-| Super + right-click drag | Resize window with mouse |
-| Super + M | Exit Hyprland |
+| Windows + Shift + Arrow keys | Move window |
+| Windows + Ctrl + Arrow keys | Resize window (hold to repeat) |
+| Windows + left-click drag | Move window with mouse |
+| Windows + right-click drag | Resize window with mouse |
+| Windows + M | Exit Hyprland |
 
 ## Tabbed groups
 
 | Shortcut | Action |
 |---|---|
-| Super + G | Group / ungroup window |
-| Super + Tab | Next tab |
-| Super + Shift + Tab | Previous tab |
+| Windows + G | Group / ungroup window |
+| Windows + Tab | Next tab |
+| Windows + Shift + Tab | Previous tab |
 
 ## Workspaces
 
 | Shortcut | Action |
 |---|---|
-| Super + 1–9 | Go to workspace |
-| Super + Shift + 1–9 | Send window to workspace |
-| Super + scroll wheel | Next / previous workspace |
+| Windows + 1–9 | Go to workspace |
+| Windows + Shift + 1–9 | Send window to workspace |
+| Windows + scroll wheel | Next / previous workspace |
 
 ## Screenshots and recording
 
 | Shortcut | Action |
 |---|---|
 | Print | Capture menu (screenshot, record, stop) |
-| Super + Shift + S | Region → clipboard |
-| Super + Ctrl + S | Region → save to `~/Pictures/Screenshots` |
-| Super + Alt + S | Full screen → save |
+| Windows + Shift + S | Region → clipboard |
+| Windows + Ctrl + S | Region → save to `~/Pictures/Screenshots` |
+| Windows + Alt + S | Full screen → save |
 
 Recordings are saved to `~/Videos/Recordings`. Stop one from the Print menu.
 
