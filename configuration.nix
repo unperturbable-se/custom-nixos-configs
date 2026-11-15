@@ -97,7 +97,13 @@
     curl
     jq
     oh-my-posh
-
+    uv
+    gcc
+    python314
+    cmake
+    gnumake
+    ninja
+       
     # Audio & Wayland Qt Support
     wireplumber
     qt5.qtwayland
@@ -113,10 +119,13 @@
     kdePackages.kate
     vlc
     imv
+    libreoffice
+    joplin-desktop
     kdePackages.dolphin
     kdePackages.kio-extras
     kdePackages.kdegraphics-thumbnailers
     kdePackages.breeze-icons
+    kdePackages.kdenlive
 
     # Hyprland & Dotfile Ecosystem
     waybar
