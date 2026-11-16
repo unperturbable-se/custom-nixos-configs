@@ -1,3 +1,4 @@
+
 { config, pkgs, ... }:
 
 {
@@ -58,6 +59,7 @@
     xwayland.enable = true;
   };
   programs.hyprlock.enable=true;
+  programs.firejail.enable=true;
   # Required for screen sharing, GTK theming, and Electron apps
   xdg.portal = {
     enable = true;
@@ -95,15 +97,18 @@
     fastfetch
     tmux
     curl
+    firejail
     jq
     oh-my-posh
     uv
+    rustc
+    cargo
     gcc
     python314
     cmake
     gnumake
     ninja
-       
+    
     # Audio & Wayland Qt Support
     wireplumber
     qt5.qtwayland
@@ -121,6 +126,8 @@
     imv
     libreoffice
     joplin-desktop
+    obsidian
+    wireshark
     yazi
     dragon-drop #for dragndrop in yazi
     kdePackages.dolphin
