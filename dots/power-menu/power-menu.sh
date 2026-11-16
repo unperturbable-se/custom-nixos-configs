@@ -1,11 +1,11 @@
 #!/usr/bin/env bash
-# Usage: power-menu.sh [menu | lock | logout | suspend | reboot | shutdown]
+# Usage: power-menu.sh [menu | lock | logout | sleep | reboot | shutdown]
 # "menu" (or no argument) opens a rofi list so you pick what to do.
 # Needs: rofi, systemd (loginctl, systemctl)
 
 lock="  Lock"
 logout="  Logout"
-suspend="  Suspend"
+sleep="  Sleep"
 reboot="  Reboot"
 shutdown="  Shutdown"
 
@@ -14,7 +14,7 @@ if [[ -z "$1" || "$1" == "menu" ]]; then
   items=(
     "$lock"
     "$logout"
-    "$suspend"
+    "$sleep"
     "$reboot"
     "$shutdown"
   )
@@ -24,7 +24,7 @@ if [[ -z "$1" || "$1" == "menu" ]]; then
   case "$choice" in
     "$lock")     set -- lock ;;
     "$logout")   set -- logout ;;
-    "$suspend")  set -- suspend ;;
+    "$sleep")  set -- sleep ;;
     "$reboot")   set -- reboot ;;
     "$shutdown") set -- shutdown ;;
     *) exit 0 ;;
@@ -36,12 +36,14 @@ fi
 case "$1" in
   lock)
     loginctl lock-session
+    hyprlock
     ;;
   logout)
     loginctl terminate-user "$USER"
     ;;
-  suspend)
+  sleep)
     systemctl suspend
+    hyprlock
     ;;
   reboot)
     systemctl reboot
@@ -50,7 +52,7 @@ case "$1" in
     systemctl poweroff
     ;;
   *)
-    echo "Usage: $0 [menu | lock | logout | suspend | reboot | shutdown]" >&2
+    echo "Usage: $0 [menu | lock | logout | sleep | reboot | shutdown]" >&2
     exit 1
     ;;
 esac
