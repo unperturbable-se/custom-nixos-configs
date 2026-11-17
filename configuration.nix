@@ -1,4 +1,5 @@
 
+
 { config, pkgs, ... }:
 
 {
@@ -158,6 +159,8 @@
     libdbusmenu-gtk3
     libappindicator-gtk3
     iwgtk
+    nemo
+    socat
   ];
 
   users.users.raed = {
